@@ -81,21 +81,23 @@ void displayRecordsInHash(struct HashType *pHashArray[], int hashSz)
 {
 	int i;
 
-	for (i=0;i<hashSz;++i)
-	{
-		// if index is occupied with any record, print all
+    for (i=0;i<hashSz;++i)
+    {
+        // if index is occupied with any record, print all
         if (pHashArray[i] != NULL && pHashArray[i]->record != NULL)
         {
             printf("Index %d:", i);
             struct RecordType *currentRec = pHashArray[i]->record;
+            
             while (currentRec != NULL)
             {
                 printf(" -> %d, %c, %d", currentRec->id, currentRec->name, currentRec->order);
                 currentRec = currentRec->next;
             }
-        printf("\n");
+            
+            printf("\n");
         }
-	}
+    }
 }
 
 int main(void)
