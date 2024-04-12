@@ -126,8 +126,8 @@ int main(void)
             {
             	hashIndex->record = newNode;
             	hashTable[index] = hashIndex;
-			}
-		}
+            }
+        }
         else
         {
             struct RecordType *currentRec = hashIndex->record;
