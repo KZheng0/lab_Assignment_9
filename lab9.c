@@ -102,16 +102,16 @@ void displayRecordsInHash(struct HashType *pHashArray[], int hashSz)
 
 int main(void)
 {
-	struct RecordType *pRecords;
-	int recordSz = 0;
+    struct RecordType *pRecords;
+    int recordSz = 0;
 
-	recordSz = parseData("input.txt", &pRecords);
-	printRecords(pRecords, recordSz);
-	// Your hash implementation
-	// Hash table
+    recordSz = parseData("input.txt", &pRecords);
+    printRecords(pRecords, recordSz);
+    // Your hash implementation
+    // Hash table
     struct HashType *hashTable[TABLESIZE] = { NULL };
-	
-	// Insert records to hash table
+
+    // Insert records to hash table
     for (int i = 0; i < recordSz; i++)
     {
         int index = hash(pRecords[i].id);
